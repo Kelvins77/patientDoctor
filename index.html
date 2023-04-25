@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AutoPDHandling</title>
+	<style type="text/css">
+	/* styles.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap');
+
+/* Reset default styles */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif Poppins;
+}
+
+/* Hero section styles */
+.hero {
+	width: 100%;
+	height: 100vh;
+	background-image: url(images/back.jpeg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo h2 {
+	font-size: 30px;
+	font-weight: bold;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.logo h2 span {
+	color: crimson;
+	font-size: 30px;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+nav {
+	width: 80%;
+	position: sticky;
+	margin: 20px auto;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+}
+
+.navbar {
+	font-family: Poppins;
+	width: 85%;
+	height: 15%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+button {
+	color: #fbfcfd;
+	padding: 10px 25px;
+	background: transparent;
+	border: 1px solid #fff;
+	border-radius: 20px;
+	outline: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.content {
+	color: #fbfcfd;
+	position: absolute;
+	top: 50%;
+	left: 8%;
+	transform: translateY(-50%);
+	z-index: 2;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 10px 0 30px;
+	line-height: 80px;
+}
+
+.popup {
+	border: 1px solid #fff;
+	position: absolute;
+	top: -170%; /* updated position */
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 25px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	background: #fff;
+	border-radius: 10px;
+	outline: none;
+	font-weight: 600;
+	color: black;
+	background-color: white;
+	text-align: center;
+	width: 200px;
+}
+
+.popup a {
+	font-size: 23px;
+	font-weight: bolder;
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 10px 0;
+	transition: 0.3s;
+}
+
+.popup a:hover {
+	color: #c0392b;
+}
+
+#selectClinicBtn {
+	background: #c0392b;
+	border: 1px solid #c0392b;
+	margin-top: 20px;
+}
+
+#selectClinicBtn:hover {
+	background: transparent;
+	color: #c0392b;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+	.content {
+		left: 3%;
+	}
+
+	h1 {
+		font-size: 40px;
+		line-height: 60px;
+	}
+
+	.popup {
+		width: 150px;
+	}
+}
+
+	</style>
+</head>
+<body>
+	
+	<div class="hero">
+		<nav>
+			<div class="logo">
+			<h2>AutoDoctor<span>PatientHandling</span></h2>
+			</div>
+		</nav>
+		<div class="navbar">
+			<div class="popup" id="clinicPopup">
+				<a href="plog.php">Patient Login</a>
+				<a href="slog.php">Specialist Login</a>
+				<a href="cliniclog.php">Clinic Login</a>
+			</div>
+		</div>
+		<div class="content">
+			<h4>Welcome to the....</h4>
+			<h1>Brightened <br>future of HeathCare</h1>
+			<button type="button" id="selectClinicBtn">LOGIN options</button>
+		</div>
+	</div>
+	 <script type="text/javascript">
+document.getElementById('selectClinicBtn').addEventListener('click', function() {
+    document.querySelector('.popup').style.top = '50%';
+});
+
+document.querySelector('.popup a').addEventListener('click', function() {
+    document.querySelector('.popup').style.top = '-170%';
+});
+    </script>
+</body>
+</body>
+</html>
